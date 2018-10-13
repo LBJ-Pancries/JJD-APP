@@ -5,20 +5,3 @@
   </div>
   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..."}%>
 <% end %>
-<%= form_for @house do |f| %>
-  <% if @house.errors.any? %>
-    <ul>
-      <% @house.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  标题
-  <%= f.text_field :title %>
-  <br>
-  叙述
-  <br>
-  <%= f.text_area :description %>
-  <br>
-  <%= f.submit "Submit", :disable_with => 'Sbumiting...' %>
-<% end %>
