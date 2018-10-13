@@ -1,4 +1,5 @@
 class HousesController < ApplicationController
+  before_action :authenticate_user! , only: [:new]
   def index
     @houses = House.all
   end
