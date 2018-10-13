@@ -1,10 +1,17 @@
-<% form_for @house do |f| %>
+<%= simple_form_for @house do |f| %>
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: "form-control"} %>
+    <%= f.input :description, input_html: { class: "form-control"} %>
+  </div>
+  <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..."}%>
+<% end %>
+<%= form_for @house do |f| %>
   <% if @house.errors.any? %>
-  <ul>
-    <% @house.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+    <ul>
+      <% @house.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
   <% end %>
   标题
   <%= f.text_field :title %>
