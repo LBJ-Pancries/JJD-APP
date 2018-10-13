@@ -2,6 +2,13 @@
   <h2>新增讨论版</h2>
   <hr>
   <%= form_for @house do |f| %>
+  <% if @house.errors.any? %>
+  <ul>
+    <% @house.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
   标题
   <%= f.text_field :title %>
   <br>
