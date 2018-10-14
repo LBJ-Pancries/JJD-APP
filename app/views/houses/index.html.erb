@@ -5,15 +5,15 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
-        <td>Title</td>
-        <td>Description</td>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <% @houses.each do |house| %>
         <tr>
-          <td>#</td>
+          <td><%= house.id %></td>
           <td><%= link_to(house.title, house_path(house)) %></td>
           <td><%= house.description %></td>
           <td>
