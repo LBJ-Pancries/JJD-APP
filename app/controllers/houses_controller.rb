@@ -44,6 +44,6 @@ class HousesController < ApplicationController
   private
 
   def house_params
-    params.require(:house).permit(:title, :description)
+    params.require(:house).permit(:title, :description, :category_id)
   end
 end

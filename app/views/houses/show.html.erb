@@ -3,5 +3,6 @@
     <%= link_to("Edit", edit_house_path(@house), class: "btn btn-primary pull-right")%>
   </div>
   <h2><%= @house.title %></h2>
+  <h3><%= @house.category.name %></h3>
   <p><%= @house.description %></p>
 </div>
