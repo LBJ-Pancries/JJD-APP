@@ -3,4 +3,20 @@
     <%= link_to("Edit", edit_category_path(@category), class: "btn btn-primary pull-right")%>
   </div>
   <h2><%= @category.name %></h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @houses.each do |house| %>
+        <tr>
+          <td>#</td>
+          <td><%= house.title %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
