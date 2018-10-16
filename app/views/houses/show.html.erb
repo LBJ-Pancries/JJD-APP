@@ -4,5 +4,6 @@
   </div>
   <h2><%= @house.title %></h2>
   <h3><%= @house.category.name %></h3>
-  <p><%= @house.description %></p>
+  <p><%= render_house_description(@house) %></p>
+
 </div>
