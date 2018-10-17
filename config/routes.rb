@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :houses
-  root 'houses#index'
+  root 'welcome#index'
   resources :categories do
     resources :houses
   end

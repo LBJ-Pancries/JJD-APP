@@ -1,3 +1,4 @@
+User.create(email: "123@qq.com", password: "123123123", password_confirmation: "123123123")
 
 Category.create(name: "户型一", house_id: "1")
 
