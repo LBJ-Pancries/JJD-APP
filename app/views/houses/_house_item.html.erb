@@ -1,6 +1,7 @@
 <tr>
   <td><%= house.id %></td>
   <td><%= link_to(house.title, house_path(house)) %></td>
+  <td><%= house.description %></td>
   <td>
       <%= link_to("Edit", edit_house_path(house), class: "btn btn-sm btn-default")%>
       <%= link_to("Delete", house_path(house),    class: "btn btn-sm btn-default",
