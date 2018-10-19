@@ -2,6 +2,15 @@
   <div class="group">
     <%= link_to("Edit", edit_category_path(@category), class: "btn btn-primary pull-right")%>
   </div>
+  <td>
+    <%= link_to category_path(@category) do %>
+      <% if @category.image.present? %>
+        <%= image_tag(@category.image.thumb.url, class: "thumbnail") %>
+      <% else %>
+        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+      <% end %>
+    <% end %>
+  </td>
   <h2><%= @category.name %></h2>
   <p><%= @category.description %></p>
   <table class="table">
