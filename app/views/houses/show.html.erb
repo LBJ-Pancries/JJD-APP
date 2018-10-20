@@ -1,8 +1,7 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("Edit", edit_house_path(@house), class: "btn btn-primary pull-right")%>
+    <%= link_to("Edit", edit_category_house_path, class: "btn btn-primary pull-right")%>
   </div>
-  <h2><%= @house.title %></h2>
-  <h3><%= @house.category.name %></h3>
-  <p><%= render_house_description(@house) %></p>
+
+  <p><%= @house.title %></p>
 </div>

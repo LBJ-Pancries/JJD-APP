@@ -1,5 +1,8 @@
 <div class="col-md-12">
   <div class="group">
+    <%= link_to("New house", new_category_house_path(@category), class: "btn btn-default pull-right") %>
+  </div>
+  <div class="group">
     <%= link_to("Edit", edit_category_path(@category), class: "btn btn-primary pull-right")%>
   </div>
   <td>
@@ -13,6 +16,7 @@
   </td>
   <h2><%= @category.name %></h2>
   <p><%= @category.description %></p>
+
   <table class="table">
     <thead>
       <tr>
@@ -24,7 +28,13 @@
       <% @houses.each do |house| %>
         <tr>
           <td>#</td>
-          <td><%= house.title %></td>
+          <td><%= link_to(house.title, category_house_path(house)) %></td>
+          <td><%= house.description %></td>
+          <td>
+              <%= link_to("Edit", edit_category_house_path(house), class: "btn btn-sm btn-default")%>
+              <%= link_to("Delete", category_house_path(house),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
         </tr>
       <% end %>
     </tbody>

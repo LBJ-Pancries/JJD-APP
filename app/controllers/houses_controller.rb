@@ -4,31 +4,37 @@ class HousesController < ApplicationController
     @houses = House.all
   end
 
+  def show
+    @category = Category.find(params[:category_id])
+    @house = House.find(params[:id])
+  end
+
   def new
+    @category = Category.find(params[:category_id])
     @house = House.new
   end
 
-  def show
+  def edit
+    @category = Category.find(params[:category_id])
     @house = House.find(params[:id])
   end
 
   def create
+    @category = Category.find(params[:category_id])
     @house = House.new(house_params)
+    @house.category = @category
     if @house.save
-      redirect_to houses_path
+      redirect_to category_path(@category)
     else
       render :new
     end
   end
 
-  def edit
-    @house = House.find(params[:id])
-  end
-
   def update
+    @category = Category.find(params[:category_id])
     @house = House.find(params[:id])
     if @house.update(house_params)
-      redirect_to house_path, notice: "Update Success"
+      redirect_to category_path(@category), notice: "Update Success"
     else
       render :edit
     end
@@ -37,13 +43,13 @@ class HousesController < ApplicationController
   def destroy
     @house = House.find(params[:id])
     @house.destroy
-    redirect_to houses_path
+    redirect_to category_path(@category)
     flash[:alert] = "House deleted"
   end
 
   private
 
   def house_params
-    params.require(:house).permit(:title, :description, :category_id)
+    params.require(:house).permit(:title, :description)
   end
 end
