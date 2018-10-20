@@ -27,10 +27,10 @@
       <% @houses.each do |house| %>
         <tr>
           <td>#</td>
-          <td><%= link_to(house.title, category_house_path(house)) %></td>
+          <td><%= link_to(house.title, category_house_path(@category, house)) %></td>
           <td><%= house.description %></td>
           <td>
-              <%= link_to("Edit", edit_category_house_path(house), class: "btn btn-sm btn-default")%>
+              <%= link_to("Edit", edit_category_house_path(@category, house), class: "btn btn-sm btn-default")%>
               <%= link_to("Delete", [house.category, house],    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
           </td>

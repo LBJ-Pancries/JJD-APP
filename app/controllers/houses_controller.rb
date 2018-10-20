@@ -22,6 +22,25 @@ class HousesController < ApplicationController
     redirect_to category_path(@category), alert: "House deleted"
   end
 
+  def show
+    @house = House.find(params[:id])
+  end
+
+  def edit
+    @category = Category.find(params[:category_id])
+    @house = House.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:category_id])
+    @house = House.find(params[:id])
+    if @house.update(house_params)
+      redirect_to category_path(@category), notice: "Update Success"
+    else
+      render :edit
+    end
+  end
+
   private
   def house_params
     params.require(:house).permit(:title, :description)
