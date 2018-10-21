@@ -6,7 +6,7 @@
   <td>
     <%= link_to category_path(@category) do %>
       <% if @category.image.present? %>
-        <%= image_tag(@category.image.thumb.url, class: "thumbnail") %>
+        <%= image_tag(@category.image.url, class: "thumbnail") %>
       <% else %>
         <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
       <% end %>
