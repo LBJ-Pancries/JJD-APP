@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
 
-  root 'todo_lists#index'
+  root 'welcome#index'
   resources :categories do
     resources :houses
   end

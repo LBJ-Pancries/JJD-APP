@@ -1,8 +1,4 @@
 <div class="col-md-12">
-  <div class="group">
-    <%= link_to("New house", new_category_house_path(@category), class: "btn btn-default pull-right") %>
-    <%= link_to("Edit", edit_category_path(@category), class: "btn btn-primary pull-right")%>
-  </div>
   <td>
     <%= link_to category_path(@category) do %>
       <% if @category.image.present? %>
@@ -29,13 +25,16 @@
           <td>#</td>
           <td><%= link_to(house.title, category_house_path(@category, house)) %></td>
           <td><%= house.description %></td>
-          <td>
-              <%= link_to("Edit", edit_category_house_path(@category, house), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", [house.category, house],    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
-          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
+  <div class="group">
+    <%= link_to("New house", new_category_house_path(@category), class: "btn btn-default pull-right") %>
+  </div>
+  <br>
+  <div class="links">
+    <%= link_to("Edit", edit_category_path(@category))%> |
+    <%= link_to("Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?"})%>
+  </div>
 </div>

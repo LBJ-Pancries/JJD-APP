@@ -23,6 +23,7 @@ class HousesController < ApplicationController
   end
 
   def show
+    @category = Category.find(params[:category_id])
     @house = House.find(params[:id])
   end
 
@@ -35,7 +36,7 @@ class HousesController < ApplicationController
     @category = Category.find(params[:category_id])
     @house = House.find(params[:id])
     if @house.update(house_params)
-      redirect_to category_path(@category), notice: "Update Success"
+      redirect_to category_house_path(@category), notice: "Update Success"
     else
       render :edit
     end
