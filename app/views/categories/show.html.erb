@@ -11,24 +11,12 @@
   <h2><%= @category.name %></h2>
   <p><%= @category.description %></p>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @houses.each do |house| %>
-        <tr>
-          <td><%= house.id %></td>
-          <td><%= link_to(house.title, category_house_path(@category, house)) %></td>
-          <td><%= house.description %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% @houses.each do |house| %>
+    <div class="index_row clearfix">
+      <h3 class="col-md-4"><%= link_to(house.title, category_house_path(@category, house)) %></h3>
+    </div>
+  <% end %>
+
   <div class="group">
     <%= link_to("New house", new_category_house_path(@category), class: "btn btn-default pull-right") %>
   </div>
