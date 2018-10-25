@@ -1,6 +1,11 @@
 <div class="todo_list_sub_title">
   <h2><%= @house.title %></h2>
   <div class="markdown"><%= markdown(@house.description) %></div>
+  <% if @house.images.present? %>
+    <% @house.images.each do |i| %>
+      <%= link_to image_tag(i.url(:small)), i.url %>
+    <% end %>
+  <% end %>
 </div>
 <div class="links">
   <%= link_to("Edit", edit_category_house_path(@category))%> |
