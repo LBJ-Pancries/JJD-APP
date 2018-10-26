@@ -1,25 +1,21 @@
-<div class="todo_list_sub_title">
-
+<div class="col-xs-12 col-sm-9">
   <h2><%= @category.name %></h2>
-
-  <% if @category.images.present? %>
-    <% @category.images.each do |i| %>
-      <%= link_to image_tag(i.url(:small)), i.url %>
-    <% end %>
-  <% end %>
-
   <p><%= @category.description %></p>
-
+  <br>
+  <div class="row">
+    <% if @category.images.present? %>
+      <% @category.images.each do |i| %>
+        <%= link_to image_tag(i.url(:small)), i.url %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="col-xs-6 col-sm-3">
+  <h3>房号列表：</h3>
   <% @houses.each do |house| %>
     <h3><%= link_to(house.title, category_house_path(@category, house)) %></h3>
   <% end %>
-
-  <div class="group">
-    <%= link_to("New house", new_category_house_path(@category), class: "btn btn-default pull-right") %>
-  </div>
-  <br>
-  <div class="links">
-    <%= link_to("Edit", edit_category_path(@category))%> |
-    <%= link_to("Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?"})%>
-  </div>
+  <a>
+    <%= link_to("New house", new_category_house_path(@category), class: "btn btn-default") %>
+  </a>
 </div>

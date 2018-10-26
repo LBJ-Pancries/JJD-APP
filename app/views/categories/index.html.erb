@@ -1,13 +1,28 @@
-<div class="col-md-12">
+<div class="col-xs-12 col-sm-9">
   <p>微民宿三期项目共7个户型：A1、A2、A3、B1、B2、B3、C1，共计38户。</p>
+  <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-xs-6 col-md-3">
 
-  <% @categories.each do |category| %>
-    <div class="index_row clearfix">
-      <h2 class="todo_list_title"><%= link_to(category.name, category_path(category)) %></h2>
-      <p class="todo_list_sub_title"><%= category.description %></p>
-    </div>
-  <% end %>
-  <div class="links">
-    <%= link_to("New HouseType", new_category_path, class: "btn btn-primary pull-right")%>
+        <% if category.image.present? %>
+          <%= image_tag(category.image.thumb.url, class: "thumbnail")%>
+        <% end %>
+        <%= category.description %>
+      </div>
+    <% end %>
   </div>
+</div>
+<div class="col-xs-6 col-sm-3">
+  <div class="row">
+    <h3>户型列表：</h3>
+    <% @categories.each do |category| %>
+      <h2 ><%= link_to(category.name, category_path(category)) %></h2>
+      <%= link_to("Edit", edit_category_path(category))%> |
+      <%= link_to("Delete", category_path(category), method: :delete, data: { confirm: "Are you sure?"})%>
+    <% end %>
+    
+  </div>
+  <a>
+    <%= link_to("New HouseType", new_category_path, class: "btn btn-default") %>
+  </a>
 </div>
