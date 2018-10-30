@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
+  resources :posts
+  resources :groups
 
-  root 'welcome#index'
+  root 'groups#index'
   resources :categories do
     resources :houses
   end
