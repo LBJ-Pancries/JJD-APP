@@ -5,7 +5,9 @@
     <p><%= todo_list.description %></p>
     <% end %>
   </div>
-  <a>
-    <%= link_to('New Todo List', new_todo_list_path, class: "btn btn-default") %>
-  </a>
+</div>
+<div class="col-xs-6 col-sm-3">
+  <div class="row">
+    <%= link_to('New Todo List', new_todo_list_path, class: "btn btn-primary pull-right") %>
+  </div>
 </div>
