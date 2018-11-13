@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :diaries
   devise_for :users
 
   resources :groups do

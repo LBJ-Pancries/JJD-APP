@@ -1,0 +1,74 @@
+<h1 class="title">施工日志</h1>
+
+<table class="table table-bordered table-striped">
+    <tr>
+      <th >
+        工程项目名称
+      </th>
+      <td >
+        计家墩项目部
+      </td>
+      <th >
+        日期
+      </th>
+      <td >
+        <%= @diary.title %>
+      </td>
+    </tr>
+    <tr>
+      <td >
+
+      </td>
+      <td >
+        尚明甸项目部
+      </td>
+      <th >
+        记录人
+      </th>
+      <td >
+        刘冰杰&庄伟浩
+      </td>
+    </tr>
+    <tr>
+      <th >
+        天气情况
+      </th>
+      <th >
+        风力
+      </th>
+      <th >
+        最高/低温度
+      </th>
+      <th >
+        备注
+      </th>
+    </tr>
+    <tr>
+      <td >
+        多云
+      </td>
+      <td >
+        2级微风
+      </td>
+      <td >
+        15～20
+      </td>
+      <td >
+
+      </td>
+    </tr>
+    <tr>
+      <th class=" col-xs-3">施工进展情况</th>
+      <td colspan="3">
+        <p class="markdown">
+         <%= markdown(@diary.body)%>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th class=" col-xs-3">重要记事</th>
+      <td colspan="3">
+
+      </td>
+    </tr>
+</table>
