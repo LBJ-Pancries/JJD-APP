@@ -1,6 +1,6 @@
 class DiariesController < ApplicationController
   def index
-    @diaries = Diary.all
+    @diaries = Diary.includes(:records).all
   end
   def new
     @diary = Diary.new
@@ -41,6 +41,6 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-    params.require(:diary).permit(:title, :body)
+    params.require(:diary).permit(:title, :body, :record_ids => [])
   end
 end

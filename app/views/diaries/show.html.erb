@@ -26,7 +26,9 @@
         记录人
       </th>
       <td >
-        刘冰杰&庄伟浩
+        <% @diary.records.each do |r| %>
+          <%= r.name %>\
+        <% end %>
       </td>
     </tr>
     <tr>
