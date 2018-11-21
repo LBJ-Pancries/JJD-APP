@@ -58,9 +58,13 @@ House.create(title: "5#204", description: "单眼灶", category_id: "2")
 House.create(title: "5#301", description: "单眼灶", category_id: "3")
 House.create(title: "5#302", description: "单眼灶", category_id: "3")
 puts "5#楼创建完"
-puts "3#楼创建完"
 House.create(title: "6#101", description: "单眼灶", category_id: "1")
 House.create(title: "6#102", description: "单眼灶", category_id: "1")
 House.create(title: "6#201", description: "单眼灶", category_id: "4")
 House.create(title: "6#202", description: "单眼灶", category_id: "4")
-puts "5#楼创建完"
+puts "6#楼创建完"
+
+Record.create(name: "刘冰杰")
+Record.create(name: "庄伟浩")
+Record.create(name: "芮熙文")
+puts "记录人员创建完"
