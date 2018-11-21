@@ -14,6 +14,13 @@ Rails.application.routes.draw do
   end
 
   root 'groups#index'
+
+  resources :cities do
+    member do
+      post :update_temp
+    end
+  end
+  
   resources :categories do
     resources :houses
   end

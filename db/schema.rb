@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181113232909) do
+ActiveRecord::Schema.define(version: 20181118233909) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "record_id"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20181113232909) do
     t.text "description"
     t.string "image"
     t.string "images"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "juhe_id"
+    t.string "province"
+    t.string "city"
+    t.string "district"
+    t.string "current_temp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["juhe_id"], name: "index_cities_on_juhe_id"
   end
 
   create_table "diaries", force: :cascade do |t|
