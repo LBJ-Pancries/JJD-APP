@@ -41,6 +41,6 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-    params.require(:diary).permit(:title, :body, :record_ids => [])
+    params.require(:diary).permit(:title, :body, :city_id, :record_ids => [])
   end
 end

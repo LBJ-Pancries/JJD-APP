@@ -2,7 +2,14 @@
   <div class="form-group">
     <%= f.input :title, input_html: { class: "form-control"}%>
     <%= f.association :records, :as => :check_boxes %>
+    <%= f.label :city %>
+    <%= f.select :city_id, City.all.map{ |c| [c.district, c.id] }, {}, :class => "form-control" %>
     <%= f.input :body, input_html: { class: "form-control"}%>
     <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..."}%>
   </div>
+
 <% end %>
+
+<script>
+  $("#diary_city_id").select2( { theme: "bootstrap"})
+</script>

@@ -18,9 +18,13 @@ Rails.application.routes.draw do
   resources :cities do
     member do
       post :update_temp
+      post :update_temperature
+      post :update_weather
+      post :update_wind
+      post :update_date
     end
   end
-  
+
   resources :categories do
     resources :houses
   end

@@ -6,21 +6,21 @@
         工程项目名称
       </th>
       <td >
-        计家墩项目部
+        <%= @diary.title %>
       </td>
       <th >
         日期
       </th>
       <td >
-        <%= @diary.title %>
+        <%= @diary.city.current_date %>
       </td>
     </tr>
     <tr>
+      <th>
+        项目所在地
+      </th>
       <td >
-
-      </td>
-      <td >
-        尚明甸项目部
+        <%= @diary.city.district %>
       </td>
       <th >
         记录人
@@ -47,13 +47,13 @@
     </tr>
     <tr>
       <td >
-        多云
+        <%= @diary.city.current_weather %>
       </td>
       <td >
-        2级微风
+        <%= @diary.city.current_wind %>
       </td>
       <td >
-        15～20
+        <%= @diary.city.current_temperature %>
       </td>
       <td >
 
