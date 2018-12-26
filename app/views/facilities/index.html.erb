@@ -1,0 +1,29 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("New Facility", new_facility_path, class: "btn btn-primary pull-right")%>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Name</td>
+        
+        <td>Commit</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @facilities.each do |facility| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(facility.name, facility_path(facility))%></td>
+          <td><%= facility.commit %></td>
+          <td>
+            <%= link_to("Edit", edit_facility_path(facility), class: "btn btn-sm btn-default")%>
+            <%= link_to("Delete", facility_path(facility), class: "btn btn-sm btn-default",
+                                  method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
