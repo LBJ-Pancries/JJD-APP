@@ -13,6 +13,14 @@ class FacilitiesController < ApplicationController
     redirect_to facilities_path
   end
 
+  def show
+    @facilities = Facility.find(params[:id])
+  end
+
+  def edit
+    @facility = Facility.find(params[:id])
+  end
+
   private
 
   def facility_params
