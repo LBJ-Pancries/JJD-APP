@@ -1,0 +1,26 @@
+<div class="col-md-4 col-md-offset-4">
+  <h2>编辑电器</h2>
+  <hr>
+  <%= form_for @facility do |f| %>
+    名称
+    <%= f.text_field :name %>
+    <br>
+    品牌
+    <%= f.text_field :brand %>
+    <br>
+    类型
+    <%= f.text_field :type %>
+    <br>
+    功率
+    <%= f.text_field :power %>
+    <br>
+    尺寸
+    <%= f.text_field :size %>
+    <br>
+    叙述
+    <br>
+    <%= f.text_area :commit %>
+    <br>
+    <%= f.submit "Submit", :disable_with => "Submitting..."%>
+  <% end %>
+</div>

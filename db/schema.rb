@@ -49,9 +49,7 @@ ActiveRecord::Schema.define(version: 20181206005458) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "city_id"
     t.integer "juhe_id"
-    t.index ["city_id"], name: "index_diaries_on_city_id"
     t.index ["juhe_id"], name: "index_diaries_on_juhe_id"
   end
 

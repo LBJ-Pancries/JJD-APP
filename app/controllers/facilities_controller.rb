@@ -21,6 +21,12 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
   end
 
+  def update
+    @facility = Facility.find(params[:id])
+    @facility.update(facility_params)
+    redirect_to facilities_path, notice: "Update Success"
+  end
+
   private
 
   def facility_params
