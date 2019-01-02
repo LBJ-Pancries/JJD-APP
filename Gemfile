@@ -26,6 +26,7 @@ gem 'redcarpet'
 gem 'rouge'
 gem 'rest-client'
 gem 'select2-rails'
+gem 'rake'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

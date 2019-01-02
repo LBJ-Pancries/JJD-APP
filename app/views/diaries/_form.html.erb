@@ -2,8 +2,10 @@
   <div class="form-group">
     <%= f.input :title, input_html: { class: "form-control"}%>
     <%= f.association :records, :as => :check_boxes %>
-    <%= f.label :city_id %>
-    <%= f.select :city, City.all.map{ |c| [c.district, c.id] }, {}, :class => "form-control" %>
+
+    <%= f.label :juhe_id %>
+    <%= f.select :juhe_id, City.all.map{ |c| [c.district, c.id] }, {}, :class => "form-control" %>
+
     <%= f.input :body, input_html: { class: "form-control"}%>
     <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..."}%>
   </div>
@@ -11,5 +13,5 @@
 <% end %>
 
 <script>
-  $("#diary_city_id").select2( { theme: "bootstrap"})
+  $("#diary_juhe_id").select2( { theme: "bootstrap"})
 </script>

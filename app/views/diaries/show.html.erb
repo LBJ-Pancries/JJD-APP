@@ -12,7 +12,7 @@
         日期
       </th>
       <td >
-        <%= @diary.city.current_date %>
+        <%= @diary.city.try(:current_date) %>
       </td>
     </tr>
     <tr>
@@ -20,7 +20,7 @@
         项目所在地
       </th>
       <td >
-        <%= @diary.city.district %>
+        <%= @diary.city.try(:district) %>
       </td>
       <th >
         记录人
@@ -47,13 +47,13 @@
     </tr>
     <tr>
       <td >
-        <%= @diary.city.current_weather %>
+        <%= @diary.city.try(:current_weather) %>
       </td>
       <td >
-        <%= @diary.city.current_wind %>
+        <%= @diary.city.try(:current_wind) %>
       </td>
       <td >
-        <%= @diary.city.current_temperature %>
+        <%= @diary.city.try(:current_temperature) %>
       </td>
       <td >
 

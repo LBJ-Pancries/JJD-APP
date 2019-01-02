@@ -17,6 +17,7 @@ class DiariesController < ApplicationController
 
   def show
     @diary = Diary.find(params[:id])
+    
   end
 
   def edit
@@ -41,6 +42,6 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-    params.require(:diary).permit(:title, :body, :city_id, :record_ids => [])
+    params.require(:diary).permit(:title, :body, :juhe_id, :record_ids => [])
   end
 end
