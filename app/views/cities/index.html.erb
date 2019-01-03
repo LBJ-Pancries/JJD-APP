@@ -21,19 +21,19 @@
       <%= link_to "更新温度", update_temp_city_path(city), :method => :post %>
     </td>
     <td>
-      <%= city.current_temperature %>
+      <%= city.try(:current_temperature) %>
       <%= link_to "更新温度区间", update_temperature_city_path(city), :method => :post %>
     </td>
     <td>
-      <%= city.current_weather %>
+      <%= city.try(:current_weather) %>
       <%= link_to "更新天气", update_weather_city_path(city), :method => :post %>
     </td>
     <td>
-      <%= city.current_wind %>
+      <%= city.try(:current_wind) %>
       <%= link_to "更新温度区间", update_wind_city_path(city), :method => :post %>
     </td>
     <td>
-      <%= city.current_date %>
+      <%= city.try(:current_date) %>
       <%= link_to "更新日期", update_date_city_path(city), :method => :post %>
     </td>
   </tr>
