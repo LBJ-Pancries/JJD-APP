@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-
-
   resources :cities do
     member do
       post :update_temp
@@ -30,6 +28,8 @@ Rails.application.routes.draw do
   end
 
   resources :facilities
+
+  resources :houses
 
   root 'facilities#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

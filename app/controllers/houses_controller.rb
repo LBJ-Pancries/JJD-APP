@@ -1,4 +1,8 @@
 class HousesController < ApplicationController
+  def index
+    @houses = House.all
+  end
+
   def new
     @category = Category.find(params[:category_id])
     @house = House.new

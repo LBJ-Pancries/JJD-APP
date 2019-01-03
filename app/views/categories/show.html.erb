@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-9">
+<div class="col-xs-12">
   <h2><%= @category.name %></h2>
   <p><%= @category.description %></p>
   <br>
@@ -9,13 +9,29 @@
       <% end %>
     <% end %>
   </div>
-</div>
-<div class="col-xs-6 col-sm-3">
-  <h3>房号列表：</h3>
-  <% @houses.each do |house| %>
-    <h3><%= link_to(house.title, category_house_path(@category, house)) %></h3>
-  <% end %>
-  <a>
-    <%= link_to("New house", new_category_house_path(@category), class: "btn btn-default") %>
-  </a>
+  <div class="group">
+		<%= link_to("New house", new_category_house_path(@category), class: "btn btn-primary pull-right") %>
+	</div>
+  <table class="table table-hover">
+		<thead>
+			<tr>
+				<td>ID</td>
+				<td>Title</td>
+				<td>Description</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @houses.each do |house| %>
+				<tr>
+					<td><%= house.id %></td>
+					<td><%= link_to(house.title, category_house_path(@category, house)) %></td>
+					<td><%= house.description %></td>
+					<td>
+						<%= link_to("Edit", edit_category_house_path(@category, house), class: "btn btn-sm btn-default")%>
+						<%= link_to("Delete", category_house_path(@category, house), class:"btn btn-sm btn-default", method: :delete, data: { confirm: "Are you sure?"})%>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>
